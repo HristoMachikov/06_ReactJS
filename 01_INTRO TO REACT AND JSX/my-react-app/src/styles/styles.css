@@ -1,0 +1,15 @@
+body .container {
+    display: flex;
+
+}
+ul li {
+    /* display: block; */
+    /* background: #F0f; */
+}
+ul li span:hover {
+    background: #F00;
+}
+
+/* body{
+    background: #F0F;
+} */

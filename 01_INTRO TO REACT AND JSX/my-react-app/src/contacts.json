@@ -1,0 +1,30 @@
+[
+    {
+        "firstName": "Ivan1",
+        "lastName": "Ivanov1",
+        "phone": "0888 888 881",
+        "email": "ivan1@abv.bg"
+    },
+    {
+        "firstName": "Ivan2",
+        "lastName": "Ivanov2",
+        "phone": "0888 888 882",
+        "email": "ivan2@abv.bg"
+    },
+    {
+        "firstName": "Ivan3",
+        "lastName": "Ivanov3",
+        "phone": "0888 888 883",
+        "email": "ivan3@abv.bg"
+    }, {
+        "firstName": "Ivan4",
+        "lastName": "Ivanov4",
+        "phone": "0888 888 884",
+        "email": "ivan4@abv.bg"
+    }, {
+        "firstName": "Ivan5",
+        "lastName": "Ivanov5",
+        "phone": "0888 888 885",
+        "email": "ivan5@abv.bg"
+    }
+]

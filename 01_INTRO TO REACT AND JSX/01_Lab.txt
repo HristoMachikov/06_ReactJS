@@ -6,3 +6,5 @@ this.setState()
 
 npx yarn@1.6.0
 npm i sass-loader 
+
+https://github.com/deyanpeychev00/JS-Web-SoftUni-September-2017/tree/master/ReactJS-Fundamentals/exercises

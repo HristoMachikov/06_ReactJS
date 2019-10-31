@@ -1,12 +1,68 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './styles/index.css';
+import './styles/App.css';
+import './styles/styles.css';
+// import App from './components/App';
+import contacts from './contacts.json'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// let contactsArr = [];
+let currSelIndex = 0;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function onClicked(index) {
+    currSelIndex = index
+    render();
+}
+
+
+// contacts.forEach((contact, idx) => {
+//     let a =
+//         <li className="contacts" onClick={() => onClicked(idx)} data-id={idx}>
+//             <span className="avatar small">&#9787;</span>
+//             <span className="title">{contact.firstName} {contact.lastName}</span>
+//         </li>;
+//     contactsArr.push(a)
+// });
+
+const Details = function (props) {
+    let elem = contacts[props.index];
+    return (
+        <div class="details">
+            <ul>
+                <li><span>Name:</span>{elem.firstName} {elem.lastName}</li>
+                <li><span>Email:</span>{elem.email}</li>
+                <li><span>Phone:</span>{elem.phone}</li>
+            </ul>
+        </div>
+    );
+}
+const Contacts = () => {
+    // return contactsArr;
+    return contacts.map((contact, idx) => {
+       return( <li className="contacts" onClick={() => onClicked(idx)} data-id={idx}>
+            <span className="avatar small">&#9787;</span>
+            <span className="title">{contact.firstName} {contact.lastName}</span>
+       </li>);
+    })
+}
+
+const Main = () => (
+    <div class="container">
+        <ul>
+            <Contacts />
+        </ul>
+        <Details index={currSelIndex} />
+    </div>
+);
+
+// function Result(params) {
+//     return (
+//         <ul>
+//             {arr}
+//         </ul>
+//     );
+// }
+
+// let a = React.createElement("div", { id: "pesho" }, "Hello React!");
+const render = () => ReactDOM.render(<Main />, document.getElementById('root'));
+render();
