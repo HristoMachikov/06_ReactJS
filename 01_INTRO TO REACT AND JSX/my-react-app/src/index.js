@@ -14,7 +14,6 @@ function onClicked(index) {
     render();
 }
 
-
 // contacts.forEach((contact, idx) => {
 //     let a =
 //         <li className="contacts" onClick={() => onClicked(idx)} data-id={idx}>
@@ -36,13 +35,14 @@ const Details = function (props) {
         </div>
     );
 }
+
 const Contacts = () => {
     // return contactsArr;
     return contacts.map((contact, idx) => {
-       return( <li className="contacts" onClick={() => onClicked(idx)} data-id={idx}>
+        return (<li className="contacts" onClick={() => onClicked(idx)} data-id={idx}>
             <span className="avatar small">&#9787;</span>
             <span className="title">{contact.firstName} {contact.lastName}</span>
-       </li>);
+        </li>);
     })
 }
 
@@ -52,17 +52,11 @@ const Main = () => (
             <Contacts />
         </ul>
         <Details index={currSelIndex} />
+        <h2>It is:{new Date().toLocaleTimeString()}</h2>
     </div>
 );
 
-// function Result(params) {
-//     return (
-//         <ul>
-//             {arr}
-//         </ul>
-//     );
-// }
-
-// let a = React.createElement("div", { id: "pesho" }, "Hello React!");
 const render = () => ReactDOM.render(<Main />, document.getElementById('root'));
 render();
+
+setInterval(render, 1000);
