@@ -1,0 +1,10 @@
+nvm install11.10.1 -node version menager - инсталира конкретна версия на Node
+
+npm i prop-types
+
+jest - тества react components
+
+tomatchsnapshot() 
+scripts:{
+test:"jest"
+}
