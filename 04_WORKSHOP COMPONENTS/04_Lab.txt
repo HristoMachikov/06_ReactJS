@@ -1,1 +1,11 @@
 https://jsonplaceholder.typicode.com/posts
+https://swapi.co/people
+
+updateCounter(){
+this.setState({},()=>{window.localStorage.setItem('count',`${this.state.count}`)})
+}
+
+- втория параметър на метода setState() се изпълнява преди метода render();
+
+console.dir(json) - по-добре показва обектите в конзолата;
+componetDidMount() - метод който се вика само веднъж след метода render()
