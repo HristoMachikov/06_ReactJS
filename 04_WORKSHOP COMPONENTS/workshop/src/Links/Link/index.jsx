@@ -2,12 +2,12 @@ import React from 'react';
 
 import './styles.css';
 
-const Link = ({ content, key }) => {
+const Link = ({ content }) => {
     return (
-        <li className="listItem" data-id={key}
+        <li className="listItem"
         // onClick={() => onClicked(idx)} 
         >
-            <a href="#">{content}</a>
+            <a href="/">{content}</a>
         </li>
     );
 }

@@ -24,8 +24,8 @@ class Posts extends React.Component {
         const { posts } = this.state;
         return posts ? <div className="Posts">
             {posts.map((post) => {
-                return <Post key={post.id} author={post.userId} path={this.props.path}>{post.body}</Post>;
-                // return <Post key={post._id} author={post.author} path={path}>{post.description}</Post>;
+                // return <Post key={post.id} author={post.userId} path={this.props.path}>{post.body}</Post>;
+                return <Post key={post._id} author={post.author} path={this.props.path}>{post.description}</Post>;
             })}
         </div> : <div>Loading...</div>
     }

@@ -2,9 +2,9 @@ import React from 'react';
 
 import './styles.css';
 
-const Post = ({ children, key, path, author }) => {
+const Post = ({ children, path, author }) => {
     return (
-        <div className="Post" data-id={key}>
+        <div className="Post">
             <img src={path} alt="logo"/>
             <p className="description">{children}</p>
             <div>
