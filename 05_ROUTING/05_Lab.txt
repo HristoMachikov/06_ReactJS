@@ -1,0 +1,12 @@
+reactjs.org/docs/Reconciliation.html - Virtual DOM
+
+localhost:3000/static/js/bundel.js -държи всички скриптове
+localhost:3000/static/js/1.chunk.js - държи всички зависимости (dependencies)
+
+reactrouting.org
+router5.org/js
+
+Suspens, Laizy , DynamicImport не се потдържа в servere-side-rendering и в Production 
+
+ErrorBoundery
+Toaster
