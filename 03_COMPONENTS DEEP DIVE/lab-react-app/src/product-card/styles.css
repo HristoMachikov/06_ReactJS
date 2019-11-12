@@ -28,5 +28,10 @@
 }
 
 .product-seconds {
+  display: block;
+  font-size: 12px;
+}
+
+.product-clicked {
   font-size: 12px;
 }

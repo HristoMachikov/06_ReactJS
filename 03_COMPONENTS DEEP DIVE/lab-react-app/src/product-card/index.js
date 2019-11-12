@@ -8,7 +8,8 @@ class ProductCard extends Component {
     super(props)
 
     this.state = {
-      counter: 0
+      counter: 0,
+      clicks: 0
     }
 
     this.interval = null
@@ -26,22 +27,44 @@ class ProductCard extends Component {
     clearInterval(this.interval)
   }
 
+  handleMouseClick = () => {
+    this.setState({
+      clicks: this.state.clicks + 1
+    })
+  }
+
+  hаndleResetClicks = (event) => {
+    event.stopPropagation();
+    this.setState({
+      clicks: 0
+    })
+  }
 
   render() {
+    console.log("render")
     const { image, title, brand, price } = this.props
     return (
-      <div className="product-tile" onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOut}>
+      <div className="product-tile" onClick={this.handleMouseClick} onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOut}>
         <img className="product-image" src={image} alt={title} />
         <div>
           <span className="product-brand">{brand}</span>
           <span className="product-title">{title}</span>
           <ProductPrice price={price} />
           <span className="product-seconds">Seconds Counter: {this.state.counter}</span>
+          <span className="product-clicked">Clicked: {this.state.clicks} times!</span>
+          <span className="product-clicked"><button onClick={this.hаndleResetClicks}>Reset</button></span>
         </div>
       </div>
     )
   }
+  componentDidMount() {
+    console.log("Mount")
+  }
+  componentDidUpdate() {
+    console.log("Update")
+  }
 }
+
 
 ProductCard.defaultProps = {
   image: '',

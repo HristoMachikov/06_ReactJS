@@ -14,10 +14,10 @@ class Header extends Component {
 
   render() {
     const { searchValue } = this.state
+    console.log(searchValue);
     return (
       <div className="header-container">
         <span>SoftUni React.js course</span>
-        
         <input value={searchValue} onChange={this.handleChange} placeholder="Search..." />
       </div>
     )

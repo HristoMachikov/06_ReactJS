@@ -7,7 +7,7 @@ import data from './data'
 
 
 
-// ReactDOM.render(<ProductList products={data} />, document.getElementById('root'))
-ReactDOM.render(
-    <Fragment><Button /><Button /><Button /></Fragment>
-    , document.getElementById('root'))
+ReactDOM.render(<ProductList products={data} />, document.getElementById('root'))
+// ReactDOM.render(
+//     <Fragment><Button dataId="1" /><Button dataId="2"/><Button dataId="3"/></Fragment>
+//     , document.getElementById('root'))

@@ -3,18 +3,22 @@ import React from 'react';
 class Button extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
-            counter: 0
+            counter: Number(window.localStorage.getItem(`${this.props.dataId}-counter`)) || 0
         }
         this.updateCouter = this.updateCouter.bind(this);
     }
 
     updateCouter() {
-        this.setState((prevState) => { return this.state.counter = prevState + 1 });
+        const oldState = this.state.counter;
+        this.setState({
+            counter: oldState + 1
+        }, () => window.localStorage.setItem(`${this.props.dataId}-counter`, `${this.state.counter}`));
     }
 
     render() {
-        return (<button onClick={this.updateCouter}>
+        return (<button data-id={this.props.dataId} onClick={this.updateCouter}>
             Clicked {this.state.counter} times!
         </button>);
     }
