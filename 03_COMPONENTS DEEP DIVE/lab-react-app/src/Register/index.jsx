@@ -9,11 +9,13 @@ class Register extends React.Component {
         email: "",
         firstName: "",
         lastName: "",
-        password: ""
+        password: "",
+        errorMessages: []
     }
 
     handleRegister = (event) => {
-        event.preventDefaut();
+
+        event.preventDefault();
         console.dir(this.state);
     }
 
@@ -24,11 +26,28 @@ class Register extends React.Component {
             [parsedId]: value
         })
     }
+    checkValidity = (event) => {
+        const { target } = event;
+        if (!target.checkValidity()) {
+            console.error("Something went wrong...")
+            console.error(target.validationMessage)
+            this.setState(({ errorMessages }) => ({
+                errorMessages: [target.validationMessage]
+            }))
+        }
+    }
 
     render() {
-        const { email, firstName, lastName, password } = this.state;
+        const { email, firstName, lastName, password, errorMessages } = this.state;
         return (
             <form onSubmit={this.handleRegister}>
+                {
+                    errorMessages.length ? <ul>
+                        {
+                            errorMessages.map((message,idx) => <li key={idx}>{message}</li>)
+                        }
+                    </ul> : null
+                }
                 <label htmlFor="email">Email:</label>
                 <input
                     type="email"
@@ -37,6 +56,7 @@ class Register extends React.Component {
                     value={email}
                     onChange={this.handleFormElementChange}
                     required
+                    onBlur={this.checkValidity}
                 /><br />
                 <label htmlFor="first-name">First name:</label>
                 <input
@@ -46,6 +66,7 @@ class Register extends React.Component {
                     value={firstName}
                     onChange={this.handleFormElementChange}
                     required
+                    onBlur={this.checkValidity}
                 /><br />
                 <label htmlFor="last-name">Last name:</label>
                 <input
@@ -55,6 +76,7 @@ class Register extends React.Component {
                     value={lastName}
                     onChange={this.handleFormElementChange}
                     required
+                    onBlur={this.checkValidity}
                 /><br />
                 <label htmlFor="password">Password:</label>
                 <input
@@ -64,6 +86,7 @@ class Register extends React.Component {
                     value={password}
                     onChange={this.handleFormElementChange}
                     required
+                    onBlur={this.checkValidity}
                 /><br />
                 <button type="submit">Submit</button>
             </form>

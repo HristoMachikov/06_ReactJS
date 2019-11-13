@@ -20,3 +20,6 @@ const {page: currentPage}=this.props; === const currentPage = this.props.page;
 
 - На форми не се закача onClick event, закача се onSubmit
 - В React props на компопненти от тип Boolen, ако са false не се дефинират, при true Не се присвоява стойност required={true} === required.
+
+- Constrain Validation API
+има метод checkValidity() който връща boolen
