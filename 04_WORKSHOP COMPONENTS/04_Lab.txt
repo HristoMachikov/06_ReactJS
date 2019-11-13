@@ -9,3 +9,14 @@ this.setState({},()=>{window.localStorage.setItem('count',`${this.state.count}`)
 
 console.dir(json) - по-добре показва обектите в конзолата;
 componetDidMount() - метод който се вика само веднъж след метода render()
+
+shouldComponentUpdate(nextProps, nextState) - вика се само във if statemant. Използва се за оптимизация. Използва се с библиотека react-fast-compare. вместо JSON.sringify(nextProps)===JSON.stringify(this.props)
+
+- fetch(`https://...../api/people?page=${page}`)
+const {page: currentPage}=this.props; === const currentPage = this.props.page;
+ 
+- Всеки метод който подаваме във Event се нарича eventHandler =(event)=>{}
+Като първи аргуммент приема event-та, който при асинхронни операции се зачиства в React.
+
+- На форми не се закача onClick event, закача се onSubmit
+- В React props на компопненти от тип Boolen, ако са false не се дефинират, при true Не се присвоява стойност required={true} === required.
