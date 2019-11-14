@@ -18,7 +18,7 @@ class Button extends React.Component {
     }
 
     render() {
-        return (<button data-id={this.props.dataId} onClick={this.updateCouter}>
+        return (<button type="button" data-id={this.props.dataId} onClick={this.updateCouter}>
             Clicked {this.state.counter} times!
         </button>);
     }

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ProductCard from '../product-card'
-import Header from '../header'
+
 import logged from '../logged'
 import './styles.css'
 
@@ -18,12 +18,11 @@ const renderProducts = (products) => {
 
 const ProductList = ({ products }) => {
   return (
-    <Fragment>
-      <Header />
-      <div className="container">
-        {renderProducts(products)}
-      </div>
-    </Fragment>
+
+    <div className="container">
+      {renderProducts(products)}
+    </div>
+
   )
 }
 

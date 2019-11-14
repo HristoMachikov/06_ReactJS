@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import {
+  Link
+} from "react-router-dom";
+
 import './styles.css'
 
 class Header extends Component {
@@ -18,8 +22,14 @@ class Header extends Component {
     return (
       <div className="header-container">
         <span>SoftUni React.js course</span>
+        <span>
+          <Link to="/">Home</Link>
+        </span>
+        <span>
+          <Link to="/register">Registration</Link>
+        </span>
         <input value={searchValue} onChange={this.handleChange} placeholder="Search..." />
-      </div>
+      </div >
     )
   }
 

@@ -1,4 +1,6 @@
-import React from 'react';
+import React from 'react'
+
+import Button from '../Button'
 
 const camelCased = myString => (
     myString.replace(/-([a-z])/g, (g) => g[1].toUpperCase())
@@ -12,6 +14,7 @@ class Register extends React.Component {
         password: "",
         errorMessages: []
     }
+
 
     handleRegister = (event) => {
 
@@ -34,6 +37,10 @@ class Register extends React.Component {
             this.setState(({ errorMessages }) => ({
                 errorMessages: [target.validationMessage]
             }))
+        } else {
+            this.setState(() => ({
+                errorMessages: []
+            }))
         }
     }
 
@@ -44,7 +51,7 @@ class Register extends React.Component {
                 {
                     errorMessages.length ? <ul>
                         {
-                            errorMessages.map((message,idx) => <li key={idx}>{message}</li>)
+                            errorMessages.map((message, idx) => <li key={idx}>{message}</li>)
                         }
                     </ul> : null
                 }
@@ -89,6 +96,7 @@ class Register extends React.Component {
                     onBlur={this.checkValidity}
                 /><br />
                 <button type="submit">Submit</button>
+                <Button />
             </form>
         )
     }
