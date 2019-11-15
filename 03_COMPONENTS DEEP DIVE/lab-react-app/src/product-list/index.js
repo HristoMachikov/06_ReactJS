@@ -1,4 +1,8 @@
 import React, { Fragment } from 'react'
+import {
+  Route
+} from "react-router-dom";
+
 import PropTypes from 'prop-types'
 import ProductCard from '../product-card'
 
@@ -6,17 +10,8 @@ import logged from '../logged'
 import './styles.css'
 
 
-
-const renderProducts = (products) => {
-  return products.map((product) => {
-    return (<Fragment key={product.id}>
-      {logged(ProductCard, product)}
-    </Fragment>);
-    // return (<ProductCard key={product.id} {...product} />)
-  })
-}
-
 const ProductList = ({ products }) => {
+
   return (
 
     <div className="container">
@@ -25,6 +20,17 @@ const ProductList = ({ products }) => {
 
   )
 }
+
+const renderProducts = (products) => {
+  return products.map((product) => {
+    return (<Fragment key={product.id}>
+      {logged(ProductCard, product)}
+    </Fragment>);
+    // return (<ProductCard key={product.id} {...product} />)
+
+  })
+}
+
 
 ProductList.defaultProps = {
   products: []

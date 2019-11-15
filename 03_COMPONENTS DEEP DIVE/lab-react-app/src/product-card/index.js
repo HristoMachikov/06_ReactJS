@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import {
+  Link
+} from "react-router-dom";
+
 import PropTypes from 'prop-types'
 import ProductPrice from '../product-price'
 import './styles.css'
@@ -42,22 +46,30 @@ class ProductCard extends Component {
 
   render() {
     console.log("render")
-    const { image, title, brand, price } = this.props
+    const { image, title, brand, price, id } = this.props
+
     return (
-      <div className="product-tile" onClick={this.handleMouseClick} onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOut}>
+
+      <div className="product-tile" onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOut}>
         <img className="product-image" src={image} alt={title} />
         <div>
           <span className="product-brand">{brand}</span>
           <span className="product-title">{title}</span>
           <ProductPrice price={price} />
           <span className="product-seconds">Seconds Counter: {this.state.counter}</span>
-          <span className="product-clicked">Clicked: {this.state.clicks} times!</span>
+          <span className="product-clicked" onClick={this.handleMouseClick}>Clicked: {this.state.clicks} times!</span>
           <span className="product-clicked"><button onClick={this.hаndleResetClicks}>Reset</button></span>
+          <div>
+            <Link className="btn-link" to={`/shoes/${id}`}>Details</Link>
+            <Link className="btn-link" to={`/shoes`}>Back</Link>
+          </div>
         </div>
       </div>
+
     )
   }
   componentDidMount() {
+    
     console.log("Mount")
   }
   componentDidUpdate() {

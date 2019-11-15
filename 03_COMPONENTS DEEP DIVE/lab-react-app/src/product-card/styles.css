@@ -35,3 +35,13 @@
 .product-clicked {
   font-size: 12px;
 }
+
+.btn-link {
+  border: 1px solid #000;
+  color: #000;
+  font-size: 0.6em;
+  padding: 0 0.2em;
+  margin: 0.5em;
+  /* display: block; */
+  text-align: center;
+}

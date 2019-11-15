@@ -26,6 +26,9 @@ class Header extends Component {
           <Link to="/">Home</Link>
         </span>
         <span>
+          <Link to="/shoes">Shoes</Link>
+        </span>
+        <span>
           <Link to="/register">Registration</Link>
         </span>
         <input value={searchValue} onChange={this.handleChange} placeholder="Search..." />
