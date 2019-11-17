@@ -7,7 +7,7 @@ import posts from '../../data/posts.json';
 const Posts = ({ path }) => {
     return <div className="Posts">
         {posts.map((post, idx) => {
-            return <Post key={idx} author={post.author} path={path}>{post.description}</Post>;
+            return <Post key={idx} author={post.author.username} path={path}>{post.description}</Post>;
         })}
     </div>
 }

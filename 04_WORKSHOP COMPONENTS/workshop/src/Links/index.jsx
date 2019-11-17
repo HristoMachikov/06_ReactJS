@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Link from './Link';
+// import Link from './LinkComp/_index';
+import LinkComp from './LinkComp/';
+import LinkCompData from './LinkComp/_index';
 
 import linkNames from '../data/linkNames.json';
 
 const Links = () => {
-    return linkNames.map((linkName, idx) => {
-        return <Link content={linkName} key={idx} />;
-    })
+    return (
+        <Fragment>
+            <LinkComp />
+            {linkNames.map((linkName, idx) => {
+                return <LinkCompData content={linkName} key={idx} />;
+            })}
+        </Fragment>
+    )
 }
 
 export default Links;

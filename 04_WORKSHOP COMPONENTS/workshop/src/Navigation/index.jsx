@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router-dom';
+
 import './styles.css';
 
 import Links from '../Links';
@@ -8,7 +10,7 @@ function Navigation({ path }) {
     return (
         <nav className="Navigation">
             <ul>
-                <img src={path} alt="logo" width="70px" />
+                <Link to="/"><img src={path} alt="logo" width="70px" /></Link>
                 <Links />
             </ul>
         </nav>

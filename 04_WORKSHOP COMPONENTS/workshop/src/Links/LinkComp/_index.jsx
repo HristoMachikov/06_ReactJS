@@ -7,7 +7,7 @@ const Link = ({ content }) => {
         <li className="listItem"
         // onClick={() => onClicked(idx)} 
         >
-            <a href="/">{content}</a>
+            <a to="/">{content}</a>
         </li>
     );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Post from './Post';
 
@@ -14,7 +15,7 @@ class Posts extends React.Component {
         };
     }
     componentDidMount() {
-        postService.load().then(posts => {
+        postService.load(null, this.props.limit).then(posts => {
             console.log(posts);
             this.setState({ posts });
         })
@@ -25,10 +26,14 @@ class Posts extends React.Component {
         return posts ? <div className="Posts">
             {posts.map((post) => {
                 // return <Post key={post.id} author={post.userId} path={this.props.path}>{post.body}</Post>;
-                return <Post key={post._id} author={post.author} path={this.props.path}>{post.description}</Post>;
+                return <Post key={post._id} author={post.author.username} path={this.props.path}>{post.description}</Post>;
             })}
         </div> : <div>Loading...</div>
     }
+}
+
+Post.PropTypes = {
+    limit: PropTypes.number
 }
 
 export default Posts;

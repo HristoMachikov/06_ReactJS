@@ -7,7 +7,7 @@ import Posts from './Posts/postsAPI';
 const Main = ({ path }) => {
     return (
         <div className="Main">
-            <h1>Some Heading</h1>
+            <h1>Publications</h1>
             <Posts path={path} />
         </div>
     )
