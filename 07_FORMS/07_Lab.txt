@@ -1,0 +1,22 @@
+event.target.checked - check-box
+<div dengeroslySetInerHTML={{__html:adress}}>
+react final form - libary
+fstch({type:"POST",url:""/,body:{}
+
+this.adressRef = React.CreateRef();
+this.pops.history.push('/',{})
+
+<Header {...this.props}/>
+
+cloudinary.com
+
+npm i --def jest
+npm i react-test-renderer
+
+test:"jest"
+npm test -> start test
+expect(1+2).toBe(3)
+
+snapshot
+jest.mock('../product-price', ()=>"Product Price")
+
