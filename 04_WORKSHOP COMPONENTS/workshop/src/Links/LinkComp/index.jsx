@@ -4,21 +4,25 @@ import { Link } from "react-router-dom"
 
 import './styles.css';
 
-const LinkComp = ({ content }) => {
+const LinkComp = (props) => {
+    const { isLogged } = props
     return (
         <Fragment>
             <li className="listItem">
                 <Link to="/post">Post</Link>
             </li>
-            <li className="listItem">
-                <Link to="/register">Register</Link>
-            </li>
-            <li className="listItem">
-                <Link to="/login">Login</Link>
-            </li>
-            <li className="listItem">
+            {isLogged && <li className="listItem">
                 <Link to="/profile">Profile</Link>
-            </li>
+            </li>}
+            {!isLogged && <li className="listItem">
+                <Link to="/user/register">Register</Link>
+            </li>}
+            {!isLogged && <li className="listItem">
+                <Link to="/user/login">Login</Link>
+            </li>}
+            {isLogged && <li className="listItem">
+                <Link to="/user/logout">Logout</Link>
+            </li>}
         </Fragment>
     );
 }

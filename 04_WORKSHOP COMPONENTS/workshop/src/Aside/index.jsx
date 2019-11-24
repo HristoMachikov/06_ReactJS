@@ -4,11 +4,11 @@ import './styles.css';
 
 import Links from '../Links';
 
-function Aside({ path }) {
+function Aside({ path, isLogged }) {
     return (
         <aside className="Aside">
             <ul>
-                <Links />
+                <Links isLogged={isLogged} />
             </ul>
         </aside>
     )

@@ -6,10 +6,10 @@ import LinkCompData from './LinkComp/_index';
 
 import linkNames from '../data/linkNames.json';
 
-const Links = () => {
+const Links = (props) => {
     return (
         <Fragment>
-            <LinkComp />
+            <LinkComp isLogged={props.isLogged}/>
             {linkNames.map((linkName, idx) => {
                 return <LinkCompData content={linkName} key={idx} />;
             })}

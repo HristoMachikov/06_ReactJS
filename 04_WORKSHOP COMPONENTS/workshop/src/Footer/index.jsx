@@ -4,11 +4,11 @@ import './styles.css';
 
 import Links from '../Links';
 
-const Footer = ({ path }) => {
+const Footer = ({ path, isLogged }) => {
     return (
         <footer className="Footer">
             <ul>
-                <Links />
+                <Links isLogged={isLogged} />
                 <img src={path} alt="logo" width="70px" />
             </ul>
             <p>Software university 2019</p>
