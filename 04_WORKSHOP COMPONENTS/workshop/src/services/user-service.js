@@ -13,7 +13,9 @@ const userService = {
         }).catch((myErr) => console.error(myErr));
     },
     getLogout: function () {
-        return fetch('http://localhost:9999/api/user/logout').then((res) => {
+        return fetch('http://localhost:9999/api/user/logout', {
+            credentials: 'include'
+        }).then((res) => {
             return res.json()
         }).catch((myErr) => console.error(myErr));
     }

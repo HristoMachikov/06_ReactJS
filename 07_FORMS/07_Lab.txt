@@ -20,3 +20,5 @@ expect(1+2).toBe(3)
 snapshot
 jest.mock('../product-price', ()=>"Product Price")
 
+2:10 часа от видеото - styled component
+

@@ -1,0 +1,25 @@
+hooks не се слагат в условни конструкции и цикли;
+Ако използваме обект за value при useState се заместват стойностите , не се прави merge
+
+
+const isClicked = useRef(false);
+isClicked.current = true;
+
+cypress - за unit testing;
+
+const [counter, setCounter] = useState(0);
+const [name, setCounter] = useState(0);
+
+useEffect(()=>{
+document.title = `Cliced ${counter}`
+},[counter])
+
+- втория параметър ако не е зададен useEffect се извиква за всяка променлива при compWillMount, compWillUpdate ,compWillUnmount 
+- втория параметър ако е зададен [] празен масив useEffect се извиква само ведниж при compWillMount
+- първия параметър ако е зададен празен и да връща само return с функция която ще се извършиисамо ведниж при compWillUnmount
+
+helmet-react се използва при server side rendering
+
+ожерреацтед.ио
+overreacted.io
+react conf 2018 - react today and tomorrow

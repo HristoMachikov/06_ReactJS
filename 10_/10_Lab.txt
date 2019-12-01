@@ -1,0 +1,8 @@
+useCallback
+useMemo 
+
+{isLogged && <Route>}
+context api - прдаване на  state  на различни компоненти;
+
+export const abv -> import {abv}
+export defaut const abv -> import abv

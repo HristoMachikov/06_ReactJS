@@ -35,11 +35,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     const cookies = parseCookies();
+    const isLogged= !!cookies["x-auth-token"];;
     this.state = {
       username: null,
       // isAdmin: false,
       userId: "",
-      isLogged: !!cookies["x-auth-token"]
+      isLogged
     }
   }
 
@@ -67,19 +68,19 @@ class App extends Component {
     history.push('/');
   }
 
-  componentDidMount() {
-    // const isAdmin = localStorage.getItem('isAdmin') === "true";
-    // const cookies = parseCookies();
-    // if (localStorage.getItem('username')) {
-    this.setState((prevState,newState) => ({
-      // username: localStorage.getItem('username'),
-      // isAdmin,
-      // userId: localStorage.getItem('userId')
-      // isLogged: !!cookies["x-auth-token"]
-      isLogged: newState.isLogged
-    }))
-    // }
-  }
+  // componentDidMount() {
+  //   // const isAdmin = localStorage.getItem('isAdmin') === "true";
+  //   // const cookies = parseCookies();
+  //   // if (localStorage.getItem('username')) {
+  //   this.setState((prevState,newState) => ({
+  //     // username: localStorage.getItem('username'),
+  //     // isAdmin,
+  //     // userId: localStorage.getItem('userId')
+  //     // isLogged: !!cookies["x-auth-token"]
+  //     isLogged: newState.isLogged
+  //   }))
+  //   // }
+  // }
 
 
   handleSubmit(event, data, isLoginPage, history) {
@@ -146,7 +147,7 @@ class App extends Component {
               />
               <Route
                 path="/user/logout"
-                render={({ history }) => this.logout(history)}
+                render={({ history }) => (this.state.isLogged ? this.logout(history) : null)}
               />
 
               {/* <Route path="/register" component={Register} />
