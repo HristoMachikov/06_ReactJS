@@ -20,6 +20,5 @@ document.title = `Cliced ${counter}`
 
 helmet-react се използва при server side rendering
 
-ожерреацтед.ио
 overreacted.io
 react conf 2018 - react today and tomorrow
